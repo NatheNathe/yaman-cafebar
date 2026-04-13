@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAMAN Café-Bar | Zürich Niederdorf</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --brand-red: #3a0a0a;
+            --brand-red-light: #5e0d0d;
+        }
+
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            background-color: #050505; 
+            color: #ffffff; 
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg-yaman-gradient {
+            background: radial-gradient(circle at center, var(--brand-red-light) 0%, #050505 100%);
+        }
+
+        .glass-red { 
+            background: rgba(58, 10, 10, 0.2); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+        }
+
+        .btn-yaman {
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            padding: 10px 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.75rem;
+            transition: all 0.4s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-yaman:hover {
+            background: #ffffff;
+            color: #3a0a0a;
+        }
+
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #ffffff;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <a href="#home" class="scroll-trigger flex flex-col leading-tight group">
+                <span class="text-3xl font-light tracking-[0.3em] uppercase">YAMAN</span>
+                <span class="text-[0.6rem] tracking-[0.6em] text-red-500 uppercase">Café-Bar</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-10 text-[0.7rem] uppercase tracking-[0.3em]">
+                <a href="#about" class="scroll-trigger nav-link">Über Uns</a>
+                <a href="#highlights" class="scroll-trigger nav-link">Specials</a>
+                <a href="#reviews" class="scroll-trigger nav-link">Reviews</a>
+                <a href="#gallery" class="scroll-trigger nav-link">Galerie</a>
+                <a href="#info" class="scroll-trigger nav-link">Kontakt</a>
+            </div>
+
+            <a href="#info" class="scroll-trigger btn-yaman">Reservieren</a>
+        </div>
+    </nav>
+
+    <!-- Hero Bereich -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-yaman-gradient">
+        <div class="absolute inset-0 opacity-40">
+            <!-- BILD: img/hero.jpg -->
+            <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&q=80&w=2000" alt="YAMAN Café-Bar Ambiente" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="relative z-10 text-center px-6 max-w-5xl">
+            <h1 class="text-5xl md:text-8xl font-light mb-8 tracking-tighter leading-none">
+                Zürcher Nächte im <br><span class="italic font-serif">YAMAN</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-12 text-gray-300 font-light tracking-[0.1em] uppercase">
+                Premium Drinks & Erstklassige Shisha im Herzen der Altstadt
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <a href="#info" class="scroll-trigger btn-yaman bg-white text-black font-bold border-white">Jetzt vorbeikommen</a>
+                <a href="#gallery" class="scroll-trigger btn-yaman">Galerie entdecken</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Über Uns -->
+    <section id="about" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+            <div class="relative">
+                <div class="absolute -inset-4 border border-white/10 translate-x-4 translate-y-4"></div>
+                <!-- BILD: img/about.jpg -->
+                <img src="img/about.jpg" alt="YAMAN Bar Drink" class="relative z-10 w-full h-auto">
+            </div>
+            <div>
+                <h2 class="text-[0.7rem] uppercase tracking-[0.5em] text-red-500 mb-4 italic">The Experience</h2>
+                <h3 class="text-4xl md:text-5xl mb-8 font-serif italic">Stilvoll genießen im Niederdorf</h3>
+                <p class="text-gray-400 font-light leading-relaxed mb-8 text-lg">
+                    Die YAMAN Café-Bar steht für moderne Eleganz und herzliche Gastfreundschaft. Mitten im Zürcher Niederdorf kreieren wir Abende, die im Gedächtnis bleiben.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights -->
+    <section id="highlights" class="py-32 px-6 bg-[#080808]">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+            <div class="glass-red p-12 group hover:bg-white transition duration-500">
+                <i data-lucide="martini" class="w-8 h-8 mx-auto mb-6 text-red-500 group-hover:text-black"></i>
+                <h4 class="text-xl tracking-widest uppercase mb-4 group-hover:text-black">Premium Bar</h4>
+                <p class="text-gray-500 text-sm group-hover:text-black">Exklusive Cocktails und feinste Spirits.</p>
+            </div>
+            <div class="glass-red p-12 group hover:bg-white transition duration-500">
+                <i data-lucide="wind" class="w-8 h-8 mx-auto mb-6 text-red-500 group-hover:text-black"></i>
+                <h4 class="text-xl tracking-widest uppercase mb-4 group-hover:text-black">Shisha Lounge</h4>
+                <p class="text-gray-500 text-sm group-hover:text-black">Erstklassiges Equipment & große Auswahl.</p>
+            </div>
+            <div class="glass-red p-12 group hover:bg-white transition duration-500">
+                <i data-lucide="map-pin" class="w-8 h-8 mx-auto mb-6 text-red-500 group-hover:text-black"></i>
+                <h4 class="text-xl tracking-widest uppercase mb-4 group-hover:text-black">Altstadt</h4>
+                <p class="text-gray-500 text-sm group-hover:text-black">Zentrale Lage in der Schmidgasse 4.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section id="gallery" class="py-32 bg-black px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-4xl font-serif italic mb-16">Galerie</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- BILDER: img/gallery1.jpg bis img/gallery4.jpg -->
+                <img src="img/gallery1.jpg" class="aspect-square object-cover grayscale hover:grayscale-0 transition duration-500 shadow-xl">
+                <img src="img/gallery2.jpg" class="aspect-square object-cover grayscale hover:grayscale-0 transition duration-500 shadow-xl">
+                <img src="img/gallery3.jpg" class="aspect-square object-cover grayscale hover:grayscale-0 transition duration-500 shadow-xl">
+                <img src="img/gallery4.jpg" class="aspect-square object-cover grayscale hover:grayscale-0 transition duration-500 shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl italic mb-12 opacity-50 font-serif">Was Gäste sagen</h2>
+            <div class="space-y-12">
+                <p class="text-2xl font-light italic">"Beste Bar und Shisha in Zürich – die Drinks sind hervorragend und das Personal super freundlich."</p>
+                <div class="w-12 h-[1px] bg-red-800 mx-auto"></div>
+                <p class="text-2xl font-light italic">"Extrem guter Service, man fühlt sich sofort willkommen. Top Atmosphäre im Niederdorf."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt/Info -->
+    <section id="info" class="py-32 px-6 bg-[#080808]">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-5xl font-serif italic mb-12 italic">Find us here</h2>
+                <div class="space-y-6">
+                    <p class="text-xl font-light tracking-widest"><span class="text-red-500">ADDRESSE:</span> Schmidgasse 4, 8001 Zürich</p>
+                    <p class="text-xl font-light tracking-widest"><span class="text-red-500">ÖFFNUNGSZEITEN:</span> Täglich ab 17:00 Uhr</p>
+                </div>
+            </div>
+            <div class="h-96 border border-white/5 grayscale">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2702.046830571775!2d8.5419999!3d47.3719999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47900a08e67a6d85%3A0xc4e590453303666b!2sSchmidgasse%204%2C%208001%20Z%C3%BCrich!5e0!3m2!1sde!2sch!4v1710000000000!5m2!1sde!2sch" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-white/5">
+        <span class="text-xl font-light tracking-[0.3em] uppercase">YAMAN</span>
+        <p class="text-[0.6rem] text-gray-600 mt-4 tracking-[0.5em]">© 2024 YAMAN ZÜRICH</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Scroll Script
+        document.querySelectorAll('.scroll-trigger').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const offset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
